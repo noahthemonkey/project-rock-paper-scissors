@@ -13,46 +13,45 @@ function computerPlays(choice) {
     var index = Math.floor(Math.random() * choice.length);
     return choice[index];
 }
-playerPlays = prompt('Rock, Paper or Scissors?');
-    
+
+const playerSelection = prompt('Rock, Paper or Scissors?');
+const computerSelection =computerPlays(choice);
 
 
+function playRound(playerSelection, computerSelection) {
+    if(playerSelection == computerSelection) {
+        alert("it is a tie!");
+    }
 
-function play(result){
-   if (playerPlays == computerPlays(choice)){
-    
-    winner = "tie!";
+    else if(playerSelection == "rock" && computerSelection == "paper") {
+        alert("you lose!")
+
+    }
+    else if(playerSelection == "rock" && computerSelection == "scissors") {
+        alert("you win!")
+
     }
     
-    //player picks rock
-    if (playerPlays == "rock" && computerPlays(choice) == "paper") {
-        winner = "computer won!";
+
+    else if(playerSelection == "paper" && computerSelection == "scissors") {
+        alert("you lose!")
+
     }
+    else if(playerSelection == "paper" && computerSelection == "rock") {
+        alert("you win!")
 
-    if (playerPlays == "rock" && computerPlays(choice) == "scissors") {
-        winner = "you won!";
-    }
-
-
-    //player picks paper
-    if (playerPlays == "paper" && computerPlays(choice) == "scissors") {
-        winner = "computer won!";
-    }
-
-    if (playerPlays == "paper" && computerPlays(choice) == "rock") {
-        winner = "you won!";
     }
 
 
+    else if(playerSelection == "scissors" && computerSelection == "rock") {
+        alert("you lose!")
 
-    //player picks scissors
-    if (playerPlays == "scissors" && computerPlays(choice) == "rock") {
-        winner = "computer won!";
+    }
+    else if(playerSelection == "scissors" && computerSelection == "paper") {
+        alert("you win!")
+
     }
 
-    if (playerPlays == "scissors" && computerPlays(choice) == "paper") {
-        winner = "you won!";
-    }
-    
-    return result;
 }
+
+playRound(playerSelection, computerSelection)
