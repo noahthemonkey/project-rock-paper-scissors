@@ -104,29 +104,36 @@ function playRound() {
 
 
 
-function endGame(){
-    if (playerScore > computerScore) {
-        console.log("you won the match!");
-    }
-    else if (computerScore > playerScore); {
-        console.log("the computer won the match.");
-    }
-}
+// function endGame(){
+//     if (playerScore > computerScore) {
+//         console.log("you won the match!");
+//     }
+//     else if (computerScore > playerScore); {
+//         console.log("the computer won the match.");
+//     }
+// }
 
-function game() {
+// function game() {
+//     console.log(playRound());
+//     if(playerScore < 5 && computerScore < 5){
+//         game();
+//     }
+//     else {
+//         endGame();
+//     }
+// }
+
+
+// game();
+
+//----------------------------------------------------------------------------------------------
+
+const btn = document.querySelector('#btn');
+
+function choice() {
     console.log(playRound());
-    if(playerScore < 5 && computerScore < 5){
-        game();
-    }
-    else {
-        endGame();
-    }
+
 }
 
 
-game();
-
-//        if (playRound(playerSelection, computerSelection) == "it is a tie!" 
-  //           && playRound(playerSelection, computerSelection) == "you lose!" 
- //            && playRound(playerSelection, computerSelection) == "you win!") {  
-//}
+btn.addEventListener('click', choice)
