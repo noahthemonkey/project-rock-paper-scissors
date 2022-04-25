@@ -17,8 +17,62 @@ function computerPlays() {
 }
 
 
+
+
+
+
+
+
+
+
+// function endGame(){
+//     if (playerScore > computerScore) {
+//         console.log("you won the match!");
+//     }
+//     else if (computerScore > playerScore); {
+//         console.log("the computer won the match.");
+//     }
+// }
+
+// function game() {
+//     console.log(playRound());
+//     if(playerScore < 5 && computerScore < 5){
+//         game();
+//     }
+//     else {
+//         endGame();
+//     }
+// }
+
+
+// game();
+
+//----------------------------------------------------------------------------------------------
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button)=> {
+    
+button.addEventListener('click', () => {
+    playRound()
+    let playerSelection = button.id;
+    console.log(playerSelection)
+    
+    });
+
+
+});
+
+function btnChoice() {
+    
+}
+
 function playRound() {
-        let playerSelection = prompt('Rock, Paper or Scissors?').toLowerCase();
+        
+    
+    // BEFORE IT WAS THISlet playerSelection = prompt('Rock, Paper or Scissors?').toLowerCase();
+
+        let playerSelection = button.id;
         let computerSelection =computerPlays();
 
     if(playerSelection == computerSelection) {
@@ -98,42 +152,3 @@ function playRound() {
 
 }
 
-
-
-
-
-
-
-// function endGame(){
-//     if (playerScore > computerScore) {
-//         console.log("you won the match!");
-//     }
-//     else if (computerScore > playerScore); {
-//         console.log("the computer won the match.");
-//     }
-// }
-
-// function game() {
-//     console.log(playRound());
-//     if(playerScore < 5 && computerScore < 5){
-//         game();
-//     }
-//     else {
-//         endGame();
-//     }
-// }
-
-
-// game();
-
-//----------------------------------------------------------------------------------------------
-
-const btn = document.querySelector('#btn');
-
-function choice() {
-    console.log(playRound());
-
-}
-
-
-btn.addEventListener('click', choice)
