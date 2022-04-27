@@ -10,11 +10,6 @@
 let playerScore = 0;
 let computerScore = 0;
 
-function computerPlays() {
-    let choice = ["rock", "paper", "scissors"];
-    let index = Math.floor(Math.random() * choice.length);
-    return choice[index];
-}
 
 
 
@@ -49,31 +44,54 @@ function computerPlays() {
 
 //----------------------------------------------------------------------------------------------
 
-const buttons = document.querySelectorAll('button');
-
-buttons.forEach((button)=> {
-    
-button.addEventListener('click', () => {
-    playRound()
-    let playerSelection = button.id;
-    console.log(playerSelection)
-    
-    });
 
 
-});
+document.getElementById('rock').onclick = user;
+document.getElementById('paper').onclick = user;
+document.getElementById('scissors').onclick = user;
 
-function btnChoice() {
-    
-}
+function user(){
+    let playerChoice = this.id;
+    console.log("user: "  + playerChoice)
 
-function playRound() {
-        
-    
-    // BEFORE IT WAS THISlet playerSelection = prompt('Rock, Paper or Scissors?').toLowerCase();
 
-        let playerSelection = button.id;
-        let computerSelection =computerPlays();
+    function computerPlays() {
+        let computerChoice = ["rock", "paper", "scissors"];
+        let index = Math.floor(Math.random() * computerChoice.length);
+        return computerChoice[index];
+    }
+
+    console.log("computer: " + computerPlays())
+
+
+   console.log(playRound(playerChoice, computerPlays()))
+
+   const score = document.querySelector('#score');
+
+
+const playerRounds = document.createElement('div');
+playerRounds.setAttribute('id','playerWon');
+playerRounds.classList.add('playerWon');
+playerRounds.textContent = 'player: ' + playerScore;
+
+score.appendChild(playerRounds);
+
+
+const computerRounds = document.createElement('div');
+computerRounds.setAttribute('id','computerWon');
+computerRounds.classList.add('computerWon');
+computerRounds.textContent = 'computer: ' + computerScore;
+
+score.appendChild(computerRounds);
+
+
+function playRound(playerSelection, computerSelection) {
+
+
+//---------------------------------------------------------------------------------------------
+
+
+//----------------------------------------------------------------------------------------------
 
     if(playerSelection == computerSelection) {
         let score = "tie! go again!";
@@ -148,7 +166,8 @@ function playRound() {
         score += "your score: " + playerScore + " The computers score: " + computerScore
         return score;
 
+        }
+        
     }
 
 }
-
